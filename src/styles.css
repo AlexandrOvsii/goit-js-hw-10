@@ -91,6 +91,7 @@
 
 .cat-info {
   display: flex;
+  padding-left: 10px;
 }
 
 .breed-select {
