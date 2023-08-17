@@ -1,3 +1,5 @@
+import SlimSelect from 'slim-select';
+import 'slim-select/dist/slimselect.css';
 import { fetchBreeds, fetchCatByBreed } from './cat-api.js';
 
 const refs = {
@@ -33,9 +35,11 @@ function onBreedChange(evt) {
 fetchBreeds()
   .then(breeds => {
     console.log(breeds);
-    refs.breedSelect.style.display = 'block';
+    // refs.breedSelect.style.display = 'flex';
+    // refs.breedSelect.hidden = false;
     refs.loader.style.display = 'none';
     addHTMLOptions(breeds);
+    slim();
   })
 
   .catch(error => {
@@ -66,4 +70,10 @@ function addHTMLOptions(breeds) {
     )
     .join('');
   refs.breedSelect.insertAdjacentHTML('afterbegin', breedsOptionsHTML);
+}
+
+function slim() {
+  new SlimSelect({
+    select: refs.breedSelect,
+  });
 }
