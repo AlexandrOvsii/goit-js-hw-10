@@ -49,11 +49,14 @@ fetchBreeds()
   });
 
 function addHTMLCatInfo(breed) {
-  refs.catInfo.innerHTML = `<img 
+  refs.catInfo.innerHTML = `
+  <div class="rounded-img">
+  <img 
   class="gallery_image" 
   src="${breed[0].url}"
   width=500px
-/><div class="wrapper">
+/></div>
+<div class="wrapper">
 <h1 class="title">${breed[0].breeds[0].name}</h1>
 <p class="description">${breed[0].breeds[0].description}</p>
 <p class="temperament"><b>Temperament:</b> ${breed[0].breeds[0].temperament}</p>
